@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Controls</title>
         <link rel="stylesheet" href="style2.css">
-
+        <script src="script.js" defer></script> 
     </head>
     <body>
         <script>
@@ -13,6 +13,19 @@
         </script>
         <h1>Controls</h1>
         <a href="index.html" class="button">Return</a>
-        <button>Allumer/eteindre</button>
+        <div>
+            <!-- Potentiomètre virtuel -->
+        <label for="ledRange">Luminosité de la LED :</label>
+        <input type="range" id="ledRange" min="0" max="255" value="125">
+        </div>
+        
+        <!-- Bouton pour contrôler le moteur -->
+        <button id="toggleMotorButton">Run/Stop Motor</button>
+
+        <!-- Afficher la distance mesurée -->
+        <p>Distance mesured : <span id="distanceDisplay">N/A</span> cm</p>
+
+        <div id="lamp" class="lamp"></div>
+        
     </body>
 </html>

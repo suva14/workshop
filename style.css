@@ -1,4 +1,4 @@
-* {
+/* * {
     margin:0px;
     padding: 10px;
     box-sizing: border-box;
@@ -17,9 +17,9 @@ body {
     height: 75px;
     border-radius: 50% ;
     margin: 20px auto;
-}
+} */
 
-.bulle {
+/* .bulle {
     background-color: orange;
     border-radius: 50%;
     margin: 10px;
@@ -37,4 +37,4 @@ body {
 .bulle:hover{
     border: white solid 1px;
     transform: translate(-1000px);
-}
+} */

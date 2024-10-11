@@ -3,57 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Workshop</title>
-    <link rel="stylesheet" href=" style.css">
-    <!-- <script src="script.js" defer></script>  -->
+    <title>WebSocket Workshop</title>
+    <link rel="stylesheet" href=" style2.css">
+    <script src="script.js" defer></script> 
 </head>
 <body>
-    <button id="toggleLedButton">Allumer/Éteindre LED</button>
-    
-    <!-- Bouton pour contrôler le moteur -->
-    <button id="toggleMotorButton">Allumer/Éteindre le Moteur</button>
-
-    <!-- Afficher la distance mesurée -->
-    <p>Distance mesurée : <span id="distanceDisplay">N/A</span> cm</p>
-
     <script>
         var connection = new WebSocket('ws://10.1.224.102:81');
-        
-        // Fonction pour envoyer une commande pour contrôler la LED
-        document.getElementById('toggleLedButton').onclick = function() {
-            console.log("Commande envoyée : toggleLED");
-            connection.send('toggleLED');
-        };
-
-        // Fonction pour envoyer une commande pour contrôler le moteur
-        document.getElementById("toggleMotorButton").onclick = function() {
-            console.log("Commande envoyée : toggleMotor");
-            connection.send('toggleMotor');
-        };
-
-        connection.onmessage = function(event) {
-            console.log("Message reçu : " + event.data);
-            
-            // Si le message est "buttonPressed", allumer la lampe
-            if (event.data === "buttonPressed") {
-                // Alterner l'état de la lampe
-                var lamp = document.getElementById("lamp");
-                if (lamp.style.backgroundColor === "yellow") {
-                    lamp.style.backgroundColor = "grey"; // Éteindre la lampe
-                } else {
-                    lamp.style.backgroundColor = "yellow"; // Allumer la lampe
-                }
-            }
-
-            // Afficher directement la distance dans l'élément HTML
-            else if (event.data[0]=="d"){
-                document.getElementById("distanceDisplay").innerText = event.data.substr(1);
-            }
-        };
     </script>
-
-    <div id="lamp" class="lamp"></div>
-    <h1>Welcome</h1>
-    <a href="controls.html" class="button">Start</a>
+    <h1>Home</h1>
+    <h2>WebSocket Workshop by Louis Badr</h2>
+    <div>
+       <a href="controls.html" id='start' class="button">Start</a>     
+    </div>
+    <div>
+        <p>Project made by Suva Ly</p>
+    </div>
+    <div>
+        <a href="https://www.linkedin.com/in/suva-ly/" target="_blank">Linkedin</a>
+    </div>
 </body>
 </html>
